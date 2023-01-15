@@ -1,0 +1,14 @@
+<!-- Top Navigation Menu -->
+<div id="bar">
+    <div>
+            <mat-icon class="active" *ngIf="!menuOpen" (click)="toggleMenu()">menu</mat-icon>
+            <mat-icon class="active" *ngIf="menuOpen" (click)="toggleMenu()">close</mat-icon>
+            <div id="title">Title</div>
+    </div>
+    <div id="menuItems" #menuItems>
+        <a>To-Do</a>
+        <a>Cleaning Planner</a>
+        <a>Habit Tracker</a>
+        <a>Long Term Goals</a>
+    </div>
+</div>
