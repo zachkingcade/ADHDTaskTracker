@@ -1,0 +1,40 @@
+<div id="mainDiv" (touchstart)="startInputTask()" (touchend)="endInputTask()">
+    <div>
+        <div>
+            <span class="unselectable">{{item.goal}}</span>
+            <p id="status" class="unselectable" (touchstart)="startInputStatus()" (touchend)="endInputStatus()">{{item.status}}</p>
+        </div>
+    </div>
+
+
+    <div id="details" *ngIf="detailsOpened">
+        <div id="info">
+            <table>
+                <tr *ngIf="item.person">
+                    <td>Person:</td>
+                    <td>{{item.person}}</td>
+                </tr>
+                <tr *ngIf="item.place">
+                    <td>Place:</td>
+                    <td>{{item.place}}</td>
+                </tr>
+                <tr *ngIf="item.estimatedTime">
+                    <td>Estimated Time:</td>
+                    <td>{{item.estimatedTime}}</td>
+                </tr>
+                <tr *ngIf="item.startDate">
+                    <td>Start:</td>
+                    <td>{{this.getFormattedDate(item.startDate)}}</td>
+                    <td *ngIf="item.startTime">{{item.startTime}}</td>
+                </tr>
+                <tr *ngIf="item.endDate">
+                    <td>End:</td>
+                    <td>{{this.getFormattedDate(item.endDate)}}</td>
+                    <td *ngIf="item.endTime">{{item.endTime}}</td>
+                </tr>
+            </table>
+            <p *ngIf="item.notes">Notes: {{item.notes}}</p>
+        </div>
+        <button id="closeDetails" (click)="closeDetails()">Close Details</button>
+    </div>
+</div>
