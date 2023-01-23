@@ -1,4 +1,4 @@
-import { Time } from "@angular/common"
+import { Time } from "./Time";
 
 export interface TaskData {
     goal: string,
@@ -9,7 +9,6 @@ export interface TaskData {
     startTime?: Time,
     endDate?: Date,
     endTime?: Time,
-    estimatedTime?: Time,
+    estimatedTime?: string,
     notes?: string,
-    picture?: any,
 }

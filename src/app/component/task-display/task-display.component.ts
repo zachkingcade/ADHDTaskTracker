@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskData } from 'src/app/models/TaskData';
-import { Time } from "@angular/common";
+import { Time } from 'src/app/models/Time';
 
 @Component({
   selector: 'app-task-display',
@@ -14,10 +14,18 @@ export class TaskDisplayComponent {
     place: "Home",
     status: "On Hold",
     startDate: new Date,
-    //startTime: new Time,
+    startTime: {
+      hours: 12,
+      minutes: 0,
+      period: 'Am'
+    },
     endDate: new Date,
-    //endTime: new Time,
-    //estimatedTime: new Time,
+    endTime: {
+      hours: 12,
+      minutes: 0,
+      period: 'Am'
+    },
+    estimatedTime: '1.5 Hours',
     notes: "",
   }
   detailsOpened: boolean = false;
@@ -46,7 +54,6 @@ export class TaskDisplayComponent {
 
   closeDetails() {
     this.detailsOpened = false;
-    console.log(this.getFormattedDate(this.item.startDate as Date));
   }
 
   getFormattedDate(date: Date): string {
@@ -55,6 +62,12 @@ export class TaskDisplayComponent {
     let day = date.getDate().toString().padStart(2, '0');
 
     return month + '/' + day + '/' + year;
+  }
+
+  formatTime(data: Time): string{
+    let newHours = ('0' + data.hours).slice(-2);
+    let newMinutes = ('0' + data.minutes).slice(-2);
+    return `${newHours}:${newMinutes} ${data.period}`;
   }
 
   AdvanceStatus() {

@@ -25,12 +25,12 @@
                 <tr *ngIf="item.startDate">
                     <td>Start:</td>
                     <td>{{this.getFormattedDate(item.startDate)}}</td>
-                    <td *ngIf="item.startTime">{{item.startTime}}</td>
+                    <td *ngIf="item.startTime">{{formatTime(item.startTime)}}</td>
                 </tr>
                 <tr *ngIf="item.endDate">
                     <td>End:</td>
                     <td>{{this.getFormattedDate(item.endDate)}}</td>
-                    <td *ngIf="item.endTime">{{item.endTime}}</td>
+                    <td *ngIf="item.endTime">{{formatTime(item.endTime)}}</td>
                 </tr>
             </table>
             <p *ngIf="item.notes">Notes: {{item.notes}}</p>

@@ -1,0 +1,71 @@
+<div id="formDiv">
+    <fieldset>
+        <legend>Task</legend>
+
+        <label for="type">Frequency *</label>
+        <select id="type">
+            <option>ToDo</option>
+            <option>Cleaning Planner</option>
+            <option>Habit</option>
+            <option></option>
+        </select>
+
+        <label for="goal">Goal *</label>
+        <input type='text' id="goal">
+
+
+        <label for="person">Person</label>
+        <input type='text' id="person">
+
+
+        <label for="place">Place</label>
+        <input type='text' id="place">
+
+
+        <label for="startDate">Start Date</label>
+        <input type='date' id="startDate">
+
+
+        <label for="startTime">Start Time</label>
+        <input type='time' id="startTime">
+
+
+        <label for="endDate">End Date</label>
+        <input type='date' id="endDate">
+
+
+        <label for="endTime">End Time</label>
+        <input type='time' id="endTime">
+
+
+        <label for="estimatedTime">Time to Complete *</label>
+        <input type='text' id="estimatedTime">
+
+
+        <label for="notes">Notes</label>
+        <input type='text' id="notes">
+    </fieldset>
+
+    <label for="repeatable" id="repeatableLabel">Repeat?</label>
+    <input type="checkbox" id="repeatable" [(ngModel)]="isRepeatable">
+
+    <fieldset *ngIf="isRepeatable">
+        <legend>Frequency</legend>
+
+        <label for="notes">Frequency *</label>
+        <select id="notes">
+            <option>On certain weekdays</option>
+            <option>On certain weeks</option>
+            <option>On certains days</option>
+            <option>On Certain Months</option>
+        </select>
+
+        <label for="notes">Start of Period</label>
+        <input type='date' id="notes">
+
+        <label for="notes">End of Period *</label>
+        <input type='date' id="notes">
+    </fieldset>
+
+    <button>Add Task</button>
+</div>
