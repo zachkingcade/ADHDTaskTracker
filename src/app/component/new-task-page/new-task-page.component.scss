@@ -122,3 +122,13 @@ td{
     display:flex;
     vertical-align: middle;
 }
+
+#addNewButton{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgb(34, 206, 34);
+}
